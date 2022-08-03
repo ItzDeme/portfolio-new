@@ -1,0 +1,34 @@
+[
+    {
+        "name":"Flyball",
+        "technology" : ["HTML", "JavaScript", "CSS", "NodeJS", "React"],
+        "description": "This is a single-page, mobile-first app that presents visitors with information pertaining to the Usual Suspects Flyball team. Users have access to social media links, information on the sport itself with videos, and google calender/map embeds.",
+        "description2": "https://usflyball-1790c.web.app/",
+        "githubLocation":"https://github.com/Mosjoandy/flyball",
+        "image": "https://media.discordapp.net/attachments/255903025074405406/964296160007319612/flyballwebsite.gif"
+    },
+    {
+        "name":"Summer Storage",
+        "technology" : ["HTML", "JavaScript", "CSS", "NodeJS", "React", "Bootstrap", "Firebase"],
+        "description": "Web site that's tied to a Firebase NoSQL database. This allowed users to keep track of their items from a game through this mimic storage website. Users could edit and view their online storage without having to check every account for these Event Items.",
+        "description2": "https://summer-storage-bbc10.web.app/",
+        "githubLocation": "https://github.com/ItzDeme/summerrace-storage",
+        "image":"https://cdn.discordapp.com/attachments/255903025074405406/964303234606956595/summerstoragegif.gif"
+    },
+    {
+        "name":"Nihon-OH!",
+        "technology" : ["HTML", "JavaScript", "CSS", "Bootstrap", "JQuery"],
+        "description": "Web Site with clickable cards designed to help users learn Japanese alphabet. I originally created it to have a quick ease of access to the Japanese characters as I was learning the language. I plan on adding an Click to speech functionality to a card once it has been clicked.",
+        "description2": "https://itzdeme.github.io/Nihon-OH/",
+        "githubLocation": "https://github.com/ItzDeme/Nihon-OH",
+        "image": "https://cdn.discordapp.com/attachments/255903025074405406/839158070911041563/functionalsite.gif"
+    },
+    {
+        "name":"BoosterPanel",
+        "technology" : ["C#", "XAML", ".NET Framework"],
+        "description": "The Booster Panel is an app used by players of RPG games (Mostly World of Warcraft). It's a convenience app, used for copying and pasting information of allowing them to use that information more efficiently. It also logs in that information everytime the ' + ' or ' - ' buttons in a text document in the same folder the app is in. It's great for people that sell leeches (Speed levels for lower leveled individuals).",
+        "description2": "No website",
+        "githubLocation": "https://github.com/ItzDeme/BoosterPanel",
+        "image":"https://cdn.discordapp.com/attachments/255903025074405406/734967069644161034/Booster_Panel.gif"
+    }
+]

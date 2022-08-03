@@ -57,8 +57,8 @@ function About() {
     <Row>
 
     {certifs.map((cert, i) => {
-        return <Col>
-                <Card style={{ width: '12rem' }}>
+        return <Col key={cert.id}>
+                <Card style={{ width: '12rem' }} >
                   <Card.Img variant="top" src={cert.image} />
                   <Card.Body>
                     <Card.Title>{cert.name}</Card.Title>
