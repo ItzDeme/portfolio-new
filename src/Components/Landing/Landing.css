@@ -1,0 +1,19 @@
+.landing{
+    height: 100vh;
+    background-color: #0F3D3E;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-flex{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-flex h1{
+    margin: 0;
+}
