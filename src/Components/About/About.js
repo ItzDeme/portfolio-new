@@ -34,7 +34,7 @@ function About() {
    
 
 
-    <Container>
+    <Container className="app-section">
     <Row>
       <Col fluid="true">
         <h1>About</h1>
@@ -49,7 +49,7 @@ function About() {
         <Doughnut data={graphData} options={{width: '25vw'}} />
       </Col>
     </Row>
-    <Row>
+    <Row className="app-section">
       <Col>
         <h2>Certifications</h2>
       </Col>
@@ -57,7 +57,7 @@ function About() {
     <Row>
 
     {certifs.map((cert, i) => {
-        return <Col key={cert.id}>
+        return <Col key={cert.id} >
                 <Card style={{ width: '12rem' }} >
                   <Card.Img variant="top" src={cert.image} />
                   <Card.Body>

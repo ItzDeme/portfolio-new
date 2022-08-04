@@ -1,0 +1,16 @@
+.tech-display{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+   
+}
+.tech-display div{
+    text-align: left;
+}
+
+.tech-display div p{
+    display: inline-block;
+    margin: 1rem;
+}

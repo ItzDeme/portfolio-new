@@ -3,9 +3,9 @@
         "name":"Flyball",
         "technology" : ["HTML", "JavaScript", "CSS", "NodeJS", "React"],
         "description": "This is a single-page, mobile-first app that presents visitors with information pertaining to the Usual Suspects Flyball team. Users have access to social media links, information on the sport itself with videos, and google calender/map embeds.",
-        "description2": "https://usflyball-1790c.web.app/",
+        "description2": "https://theusualsuspectsflyball.com",
         "githubLocation":"https://github.com/Mosjoandy/flyball",
-        "image": "https://media.discordapp.net/attachments/255903025074405406/964296160007319612/flyballwebsite.gif"
+        "image": "https://media.discordapp.net/attachments/255903025074405406/964296160007319612/flyballwebsite.gif?width=321&height=470"
     },
     {
         "name":"Summer Storage",
@@ -30,5 +30,14 @@
         "description2": "No website",
         "githubLocation": "https://github.com/ItzDeme/BoosterPanel",
         "image":"https://cdn.discordapp.com/attachments/255903025074405406/734967069644161034/Booster_Panel.gif"
+    },
+    {
+        "name":"Innovative Energy Network",
+        "technology" : ["HTML", "JavaScript", "CSS", "NodeJS", "React"],
+        "description": "Brought mock-ups to life with HTML, CSS, and JavaScript for a start up company. Utilized ReactJS to create a mobile-friendly static webpage. A landing page with eye catching creative design built from ground up by yours truly.",
+        "description2": "https://innovativeenergynetwork.com/",
+        "githubLocation": "Private",
+        "image":"https://cdn.discordapp.com/attachments/1004031752660074638/1004586081108377661/InnovativeNetwork.gif"
     }
+
 ]

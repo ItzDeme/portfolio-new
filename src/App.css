@@ -2,3 +2,13 @@
   text-align: center;
 }
 
+.app-section{
+  margin-top: 3vh !important;
+  margin-bottom: 3vh !important;
+}
+
+.cursor{
+
+cursor: pointer;
+
+}

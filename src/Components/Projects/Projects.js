@@ -7,11 +7,15 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import projects from './ProjectData.json';
+import ProjectModal from './ProjectModal';
 
 function Projects() {
 
 const [projectData, setProjectData] = useState(projects);
+const [modalShow, setModalShow] = useState(false);
+const [singleProject, setSingleProject] = useState()
 
+  let projectInfo = {};
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -34,47 +38,32 @@ const [projectData, setProjectData] = useState(projects);
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+function handleModalToggle (project) {
+setSingleProject(project);
+setModalShow(true);
+}
+
+
   return (
-    <div className="Projects">
+    <div className="app-section Projects">
+      <h1 className="app-section">Projects</h1>
     <Carousel
        swipeable={false}
       draggable={false}
-      // showDots={true}
       responsive={responsive}
       centerMode={true}
        infinite={true}
-      // autoPlaySpeed={1000}
-      // keyBoardControl={true}
-      // customTransition="all .5"
-      // transitionDuration={500}
       containerClass="carousel-container"
-      // removeArrowOnDeviceType={["tablet", "mobile"]}
-      // deviceType={this.props.deviceType}
-      // dotListClass="custom-dot-list-style"
      itemClass="carousel-item-padding-40-px"
     >
       {projectData.map((project, i) => {
-        return <Card style={{ width: '12rem', height: '300px' }} key={i}>
-                  <Card.Img variant="top" src={project.image} />
-                  <Card.Body>
-                    <Card.Title>{project.name}</Card.Title>
-                    <ListGroup className="list-group-flush">
-                      <ListGroup.Item>Technologies</ListGroup.Item>
-                      <ListGroup.Item>
-                        {project.technology.map((tech, i)=> <p style={{display: 'inline-block'}} key={i}>{tech} &nbsp;</p>)}
-                      </ListGroup.Item>
-                   </ListGroup>
-
-                    <Button variant="primary" onClick={() => openInNewTab(project.githubLocation)}>Verify</Button>
-                  </Card.Body>
+        return <Card className='cursor' style={{ width: '18rem', height: '250px' , boxShadow: "-12px 14px #9d2626" }} key={i} onClick={()=>handleModalToggle(project)}>
+                  <Card.Img variant="top" src={project.image} style={{height: '100%'}}/>
                 </Card>
               
       })}
-      <div>Item 1</div>
-      <div>Item 2</div>
-      <div>Item 3</div>
-      <div>Item 4</div>
     </Carousel>;
+   {singleProject != null ? <ProjectModal onHide={() => setModalShow(false)} show={modalShow} project={singleProject}/> : null}
     </div>
   );
 }
