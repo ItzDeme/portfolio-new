@@ -1,14 +1,60 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;300;900&family=Secular+One&display=swap');
+
+
+
 .App {
   text-align: center;
 }
 
 .app-section{
-  margin-top: 3vh !important;
-  margin-bottom: 3vh !important;
+  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.app-section h1{
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+ 
 }
 
 .cursor{
 
 cursor: pointer;
 
+}
+
+.exo-font{
+  font-family: 'Exo', sans-serif;
+}
+
+.secular-font{
+  font-family: 'Secular One', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+* h1, h2, h3, h4, h5, h6{
+ 
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.font-weight{
+  font-size: 2rem;
+  font-weight: 600;
 }

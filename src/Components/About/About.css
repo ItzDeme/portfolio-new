@@ -1,0 +1,11 @@
+.about-section{
+    background-color: #F1F1F1;
+    width: 100% !important;
+}
+
+.cert-section .col{
+    justify-content: center !important;
+    display: flex !important;
+    margin-top: 15px;
+}
+

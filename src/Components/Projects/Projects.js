@@ -45,8 +45,8 @@ setModalShow(true);
 
 
   return (
-    <div className="app-section Projects">
-      <h1 className="app-section">Projects</h1>
+    <div className="app-section projects">
+      <h1 className="app-section exo-font">Projects</h1>
     <Carousel
        swipeable={false}
       draggable={false}
@@ -57,7 +57,7 @@ setModalShow(true);
      itemClass="carousel-item-padding-40-px"
     >
       {projectData.map((project, i) => {
-        return <Card className='cursor' style={{ width: '18rem', height: '250px' , boxShadow: "-12px 14px #9d2626" }} key={i} onClick={()=>handleModalToggle(project)}>
+        return <Card className='cursor project-card' style={{ width: '18rem', height: '250px' , boxShadow: "-12px 14px #9d2626" }} key={i} onClick={()=>handleModalToggle(project)}>
                   <Card.Img variant="top" src={project.image} style={{height: '100%'}}/>
                 </Card>
               

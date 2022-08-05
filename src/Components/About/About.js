@@ -15,8 +15,11 @@ function About() {
     datasets: [{
       label: "Users Gained",
       data: ChartData.map((data) => data.percentage),
-      backgroundColor: ChartData.map((data) => data.color)
-    }]
+      backgroundColor: ChartData.map((data) => data.color),
+      borderColor: '#0F3D3E',
+      hoverOffset: 10
+    }],
+    
   })
 
 
@@ -34,27 +37,30 @@ function About() {
    
 
 
-    <Container className="app-section">
+    <div className="app-section about-section">
     <Row>
       <Col fluid="true">
-        <h1>About</h1>
+        <h1 className='exo-font'>About</h1>
       </Col>
     </Row>
     <Row className="">
       <Col>
         <h1>Picture of Something</h1>
-        <p>I am a self taught developer.</p>
+        <p>Hey there! I am a self taught developer. I have completed multiple certificates/tutorials. I have also 
+          created a couple projects listed below. As of recently most of my work has been with Web development. 
+          But programming is like riding a bike, just need to relearn the syntax.</p>
       </Col>
-      <Col>
-        <Doughnut data={graphData} options={{width: '25vw'}} />
+      <Col style={{width: '200px'}}>
+        <Doughnut data={graphData} />
       </Col>
     </Row>
+    <div>
     <Row className="app-section">
       <Col>
-        <h2>Certifications</h2>
+        <h2 className='exo-font font-weight'>Certifications</h2>
       </Col>
     </Row>
-    <Row>
+    <Row className="cert-section">
 
     {certifs.map((cert, i) => {
         return <Col key={cert.id} >
@@ -69,7 +75,8 @@ function About() {
       })}
     
     </Row>
-  </Container>
+    </div>
+  </div>
   );
 }
 
