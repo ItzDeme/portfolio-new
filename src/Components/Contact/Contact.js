@@ -10,9 +10,10 @@ function Contact() {
   return (
     <div className="contact">
     <Row className="app-section exo-font">
+    <h1 >Contact Me</h1>
       <Col>
       <div>
-        <h1 >Contact Me</h1>
+        
       </div>
      <Form style={{maxWidth: '400px' , margin: 'auto'}}>
       <Form.Group className="mb-6" controlId="exampleForm.ControlInput1">
