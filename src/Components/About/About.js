@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Certs from './CertificationData.json'
 import {Chart as ChartJS} from 'chart.js/auto';
+import Accordion from 'react-bootstrap/Accordion';
 import { ChartData } from './ChartData';
 
 function About() {
@@ -17,13 +18,27 @@ function About() {
       data: ChartData.map((data) => data.percentage),
       backgroundColor: ChartData.map((data) => data.color),
       borderColor: '#0F3D3E',
-      hoverOffset: 10
+      hoverOffset: 19
     }],
+    font: {
+      size: 48
+    }
     
   })
 
 
- 
+ const optionsGraph = {
+  plugins:{
+  legend: {
+      labels: {
+          // This more specific font property overrides the global property
+          font :{
+            size: '20rem'
+          }
+      }
+    }
+  }
+}
   
 
   const openInNewTab = url => {
@@ -46,35 +61,43 @@ function About() {
     <Row className="">
       <Col>
         <h1>Picture of Something</h1>
-        <p>Hey there! I am a self taught developer. I have completed multiple certificates/tutorials. I have also 
+        <p className='exo-font' style={{fontSize: '1.3em'}}>Hey there! I am a self taught developer. I have completed multiple certificates/tutorials. I have also 
           created a couple projects listed below. As of recently most of my work has been with Web development. 
           But programming is like riding a bike, just need to relearn the syntax.</p>
       </Col>
-      <Col style={{width: '200px'}}>
-        <Doughnut data={graphData} />
+      <Col className='donut-graph' >
+        <Doughnut  data={graphData}  options={optionsGraph}/>
       </Col>
     </Row>
     <div>
     <Row className="app-section">
-      <Col>
-        <h2 className='exo-font font-weight'>Certifications</h2>
-      </Col>
-    </Row>
-    <Row className="cert-section">
+    <Accordion>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header><Col>
+        <h2 className='exo-font font-weight' style={{textAlign: 'center'}}>Certifications</h2>
+      </Col></Accordion.Header>
+        <Accordion.Body>
+        <Row className="cert-section">
 
-    {certifs.map((cert, i) => {
-        return <Col key={cert.id} >
-                <Card style={{ width: '12rem' }} >
-                  <Card.Img variant="top" src={cert.image} />
-                  <Card.Body>
-                    <Card.Title>{cert.name}</Card.Title>
-                    <Button variant="primary" onClick={() => openInNewTab(cert.verify)}>Verify</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-      })}
-    
+        {certifs.map((cert, i) => {
+            return <Col key={cert.id} >
+                    <Card style={{ width: '12rem' }} >
+                      <Card.Img variant="top" src={cert.image} />
+                      <Card.Body>
+                        <Card.Title>{cert.name}</Card.Title>
+                        <Button variant="primary" onClick={() => openInNewTab(cert.verify)}>Verify</Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+          })}
+
+        </Row>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+      
     </Row>
+   
     </div>
   </div>
   );

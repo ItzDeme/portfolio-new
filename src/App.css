@@ -9,7 +9,12 @@ html,body
 
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;300;900&family=Secular+One&display=swap');
 
-
+.row{
+  width: 80% !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin: auto !important;
+}
 
 .App {
   text-align: center;

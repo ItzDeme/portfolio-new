@@ -3,6 +3,11 @@
     width: 100% !important;
 }
 
+.donut-graph {
+   max-width: 500px !important;
+}
+
+
 .cert-section .col{
     justify-content: center !important;
     display: flex !important;

@@ -5,6 +5,7 @@
 
 .projects{
     background-color: #0F3D3E;
+    box-shadow: 0px 20px 20px 0px #323232, -1px -20px 20px -10px #323232;
 }
 
 .projects div ul{

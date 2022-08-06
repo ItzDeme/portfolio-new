@@ -22,9 +22,9 @@ const techStyle = {
   return (
     <div className="app-section tech">
       <header className="tech-header">
-      <h1 className='exo-font'>Technologies</h1>
+      <h1 className='exo-font'>Tools and Technologies</h1>
       <div className="exo-font tech-info">
-      <p>{techInfo}</p>
+      <p style={{fontSize: '1.3em'}}>{techInfo}</p>
       </div>
       <div className='tech-display'>
         {Technologies.map((tech, i) => {

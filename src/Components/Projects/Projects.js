@@ -46,7 +46,7 @@ setModalShow(true);
 
   return (
     <div className="app-section projects">
-      <h1 className="app-section exo-font">Projects</h1>
+      <h1 className="app-section exo-font" style={{color: '#f1f1f1'}}>Projects</h1>
     <Carousel
        swipeable={false}
       draggable={false}
@@ -64,6 +64,7 @@ setModalShow(true);
       })}
     </Carousel>;
    {singleProject != null ? <ProjectModal onHide={() => setModalShow(false)} show={modalShow} project={singleProject}/> : null}
+   <div><p className='exo-font' style={{fontSize: '20px', color: '#f1f1f1'}}>(Click one to learn more!)</p></div>
     </div>
   );
 }
