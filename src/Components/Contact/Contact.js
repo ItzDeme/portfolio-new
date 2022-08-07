@@ -8,20 +8,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 function Contact() {
-const [email, setEmail] = useState();
-const [message, setMessage] = useState();
+const [email, setEmail] = useState('');
+const [message, setMessage] = useState('');
 
 const handleInput = async (e) =>{
  e.target.name === 'email' ? setEmail(e.target.value) : setMessage(e.target.value);
 }
 const handleSumbit = (data) =>{
  data.preventDefault();
- const input ={
-  email: email,
-  message: message
- }
-  
-console.log(input);
+ const formSubmit = `${process.env.REACT_APP_CONTACT_FORM_URL}entry.1917394876=${email}&entry.239537150=${message}`;
+ fetch(formSubmit, ()=> console.log("It works, but for some reason screams."))
 setEmail('');
 setMessage('');
 }
@@ -29,19 +25,19 @@ setMessage('');
   return (
     <div className="contact">
     <Row className="app-section exo-font">
-    <h1 >Contact Me</h1>
+    <h1 >Contact Me </h1>
       <Col>
       <div>
         
       </div>
-     <Form style={{maxWidth: '400px' , margin: 'auto'}} onSubmit={handleSumbit}>
+     <Form style={{maxWidth: '400px', minWidth: '200px' , margin: 'auto'}} onSubmit={handleSumbit} autoComplete="off">
       <Form.Group className="mb-6" controlId="exampleForm.ControlInput1">
         <Form.Label>Email address</Form.Label>
-        <Form.Control value={email} type="email" placeholder="Email" name='email' onChange={(e)=> handleInput(e)}/>
+        <Form.Control value={email} type="email" placeholder="Email" name='email'  onChange={(e)=> handleInput(e)}/>
       </Form.Group>
       <Form.Group className="mb-6" controlId="exampleForm.ControlTextarea1" >
         <Form.Label>Message</Form.Label>
-        <Form.Control value={message} as="textarea" rows={3} onChange={(e)=> handleInput(e)}/>
+        <Form.Control value={message} as="textarea" name='message'  rows={3} onChange={(e)=> handleInput(e)}/>
         <Button variant="primary" type="submit" style={{maxWidth: '400px' , margin: '10px'}} >
         Submit
       </Button>

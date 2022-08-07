@@ -63,8 +63,8 @@ function About() {
       <Col>
         <img alt='image_of_skills' src={skillsImage}/>
         <p className='exo-font about-paragraph' style={{fontSize: '1.3em'}}>Hey there! I am a self taught developer. I have completed multiple certificates and tutorials. I have also 
-          created a couple projects listed below. As of recently most of my work has been with Web development. 
-          But programming is like riding a bike, just need to relearn the syntax. A little about me, I love video games, hiking and secretly doing some voice acting.</p>
+          created a couple projects listed below. As of recently, most of my work has been with Web development. 
+          But programming is like riding a bike, you just need to relearn the syntax. A little about me, I love video games, hiking and secretly doing some voice acting.</p>
       </Col>
       <Col className='donut-graph' >
         <Doughnut  data={graphData}  options={optionsGraph}/>
