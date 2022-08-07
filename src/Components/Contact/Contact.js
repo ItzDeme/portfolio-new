@@ -1,5 +1,6 @@
 import './Contact.css';
 import Form from 'react-bootstrap/Form';
+import React, {useState} from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {Container, Row, Col} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -7,6 +8,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 function Contact() {
+const [email, setEmail] = useState();
+const [message, setMessage] = useState();
+
+const handleInput = async (e) =>{
+ e.target.name === 'email' ? setEmail(e.target.value) : setMessage(e.target.value);
+}
+const handleSumbit = (data) =>{
+ data.preventDefault();
+ const input ={
+  email: email,
+  message: message
+ }
+  
+console.log(input);
+setEmail('');
+setMessage('');
+}
+
   return (
     <div className="contact">
     <Row className="app-section exo-font">
@@ -15,14 +34,17 @@ function Contact() {
       <div>
         
       </div>
-     <Form style={{maxWidth: '400px' , margin: 'auto'}}>
+     <Form style={{maxWidth: '400px' , margin: 'auto'}} onSubmit={handleSumbit}>
       <Form.Group className="mb-6" controlId="exampleForm.ControlInput1">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="name@example.com" />
+        <Form.Control value={email} type="email" placeholder="Email" name='email' onChange={(e)=> handleInput(e)}/>
       </Form.Group>
-      <Form.Group className="mb-6" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Example textarea</Form.Label>
-        <Form.Control as="textarea" rows={3} />
+      <Form.Group className="mb-6" controlId="exampleForm.ControlTextarea1" >
+        <Form.Label>Message</Form.Label>
+        <Form.Control value={message} as="textarea" rows={3} onChange={(e)=> handleInput(e)}/>
+        <Button variant="primary" type="submit" style={{maxWidth: '400px' , margin: '10px'}} >
+        Submit
+      </Button>
       </Form.Group>
     </Form>
     </Col>

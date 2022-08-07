@@ -8,6 +8,7 @@ import Certs from './CertificationData.json'
 import {Chart as ChartJS} from 'chart.js/auto';
 import Accordion from 'react-bootstrap/Accordion';
 import { ChartData } from './ChartData';
+import skillsImage from '../Images/skills.png'
 
 function About() {
   const [certifs, setCertifs] = useState(Certs);
@@ -55,15 +56,15 @@ function About() {
     <div className="app-section about-section">
     <Row>
       <Col fluid="true">
-        <h1 className='exo-font'>About</h1>
+        <h1 className='exo-font'>About Me</h1>
       </Col>
     </Row>
     <Row className="">
       <Col>
-        <h1>Picture of Something</h1>
-        <p className='exo-font' style={{fontSize: '1.3em'}}>Hey there! I am a self taught developer. I have completed multiple certificates/tutorials. I have also 
+        <img alt='image_of_skills' src={skillsImage}/>
+        <p className='exo-font about-paragraph' style={{fontSize: '1.3em'}}>Hey there! I am a self taught developer. I have completed multiple certificates and tutorials. I have also 
           created a couple projects listed below. As of recently most of my work has been with Web development. 
-          But programming is like riding a bike, just need to relearn the syntax.</p>
+          But programming is like riding a bike, just need to relearn the syntax. A little about me, I love video games, hiking and secretly doing some voice acting.</p>
       </Col>
       <Col className='donut-graph' >
         <Doughnut  data={graphData}  options={optionsGraph}/>

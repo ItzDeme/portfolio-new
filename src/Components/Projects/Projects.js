@@ -18,7 +18,7 @@ const [singleProject, setSingleProject] = useState()
   let projectInfo = {};
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3200, min: 1024 },
       items: 3,
       slidesToSlide: 3 // optional, default to 1.
     },

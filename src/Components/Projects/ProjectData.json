@@ -10,7 +10,7 @@
     {
         "name":"Summer Storage",
         "technology" : ["HTML", "JavaScript", "CSS", "NodeJS", "React", "Bootstrap", "Firebase"],
-        "description": "Web site that's tied to a Firebase NoSQL database. This allowed users to keep track of their items from a game through this mimic storage website. Users could edit and view their online storage without having to check every account for these Event Items.",
+        "description": "Web site that's tied to a Firebase NoSQL database. This allowed users to keep track of their items from a game through this mimic storage website. Users could edit and view their online storage without having to check every account for these Event Items. Although the pictures do not work anymore please feel free to login with Email: releji3622@leafzie.com Password: test123 the database still works.",
         "description2": "https://summer-storage-bbc10.web.app/",
         "githubLocation": "https://github.com/ItzDeme/summerrace-storage",
         "image":"https://cdn.discordapp.com/attachments/255903025074405406/964303234606956595/summerstoragegif.gif"
