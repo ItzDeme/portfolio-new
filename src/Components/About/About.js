@@ -10,7 +10,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import { ChartData } from './ChartData';
 import skillsImage from '../Images/skills.png'
 
-function About() {
+function About({setSiteData, siteData}) {
   const [certifs, setCertifs] = useState(Certs);
   const [graphData, setGraphData] = useState ({
     labels: ChartData.map((data) => data.label),
@@ -27,6 +27,7 @@ function About() {
     
   })
 
+  var timesClicked = 0;
 
  const optionsGraph = {
   plugins:{
@@ -47,7 +48,32 @@ function About() {
   };
 
 
+const handleCertClicked = (e, cert) =>{
 
+if(e.target.innerText === 'Certifications'){
+if(timesClicked < 1 )
+{
+siteData.site.certifications.timeOpened = new Date().toLocaleTimeString()
+//setSiteData(siteData.site.certifications: {timeOpened: new Date().toLocaleTimeString()})
+timesClicked++;
+}
+
+}
+if(cert != undefined){
+if(e.target.innerText === 'Verify'){
+if(siteData.site.certifications[cert.id].length == 0){
+siteData.site.certifications[cert.id].push(true, new Date().toLocaleTimeString(), cert.name)
+siteData.site.certifications.amountVerified++;
+console.log(siteData)
+}
+}
+}
+
+}
+
+
+
+// openInNewTab(cert.verify))
 
   return (
    
@@ -72,7 +98,7 @@ function About() {
     </Row>
     <div>
     <Row className="app-section">
-    <Accordion>
+    <Accordion onClick={(e)=>{handleCertClicked(e)}} name='accordion'>
       <Accordion.Item eventKey="0">
         <Accordion.Header><Col>
         <h2 className='exo-font font-weight' style={{textAlign: 'center'}}>Certifications</h2>
@@ -86,7 +112,7 @@ function About() {
                       <Card.Img variant="top" src={cert.image} />
                       <Card.Body>
                         <Card.Title>{cert.name}</Card.Title>
-                        <Button variant="primary" onClick={() => openInNewTab(cert.verify)}>Verify</Button>
+                        <Button variant="primary" onClick={(e) => handleCertClicked(e, cert, openInNewTab(cert.verify))}>Verify</Button>
                       </Card.Body>
                     </Card>
                   </Col>
