@@ -80,7 +80,6 @@ export const Technologies = [
         link: "https://raw.githubusercontent.com/jmnote/z-icons/master/svg/python.svg",
         info: "Recently started the 100 Days of Python Bootcamp on Udemy. From what I've seen programming logic is applied the same, but syntax is different."
     }
-   
 ]
 
 

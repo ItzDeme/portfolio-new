@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-function Contact({setShowStats}) {
+function Contact({setShowStats, siteData}) {
 const [email, setEmail] = useState('');
 const [message, setMessage] = useState('');
 
@@ -20,7 +20,13 @@ const handleSumbit = (data) =>{
  fetch(formSubmit, ()=> console.log("It works, but for some reason screams."))
 setEmail('');
 setMessage('');
+
+if(siteData.site.sentEmail == false){
+siteData.site.sentEmail = true;
 }
+}
+
+
 
   return (
     <div className="contact">
@@ -47,7 +53,7 @@ setMessage('');
     <Col style={{  display: 'block',
     marginTop: '2rem'}}>
       <div>
-      <Button href='#landing' variant="light" size="lg" onClick={()=> setShowStats(true)}>Click here to see your stats!</Button>
+      <Button href='#landing' variant="light" style={{fontSize: '32px'}} size="lg" onClick={()=> setShowStats(true)}>Click here to see your stats!</Button>
       </div>
       <div style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-evenly'}}>
         <h1 style={{fontSize: '50px', margin: '2rem 100px'}}>

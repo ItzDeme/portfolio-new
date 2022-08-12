@@ -5,15 +5,15 @@ import React, {useState} from 'react';
 
 function GetCertifications ({cert, dataPoint}){
 return(
- cert[dataPoint] == 0 ? null : <li style={{fontSize: '1.7rem',}}>{cert[dataPoint][2]}, and viewed at {cert[dataPoint][1]}</li> 
+ cert[dataPoint] == 0 ? null : <li style={{fontSize: '1.7rem',listStyle: 'none'}}>{cert[dataPoint][2]}, and viewed at {cert[dataPoint][1]}</li> 
 )}
 function GetProjects ({proj, dataPoint, point}){    
 return(
-  proj[point].timeOpened === '' ? <li style={{fontSize: '1.7rem',}}>{proj[point].name} has not been viewed. 😑</li> : <li style={{fontSize: '1.7rem'}}>{proj[point].name}, was viewed at {proj[point].timeOpened} and closed at {proj[point].timeClosed}.  Viewed Code? {!proj[point].viewCode ? 'No' : 'Yes'} | Viewed Demo? {!proj[point].viewDemo ? 'No' : 'Yes'}</li>
+  proj[point].timeOpened === '' ? <li style={{fontSize: '1.7rem',listStyle: 'none'}}>{proj[point].name} has not been viewed. 😑</li> : <li style={{fontSize: '1.7rem', listStyle: 'none'}}>{proj[point].name}, was viewed at {proj[point].timeOpened} and closed at {proj[point].timeClosed}.  Viewed Code? {!proj[point].viewCode ? 'No' : 'Yes'} | Viewed Demo? {!proj[point].viewDemo ? 'No' : 'Yes'}</li>
 )}
 function GetTechnologies(tech, dataPoint, i){
 return(
- tech.tech[tech.dataPoint] == 0 ? null : <li style={{fontSize: '1.7rem'}}>{tech.tech[tech.dataPoint][2]} was reviewed at {tech.tech[tech.dataPoint][1]}</li> 
+ tech.tech[tech.dataPoint] == 0 ? null : <li style={{fontSize: '1.7rem', listStyle: 'none'}}>{tech.tech[tech.dataPoint][2]} was reviewed at {tech.tech[tech.dataPoint][1]}</li> 
 )}
 
 
@@ -53,9 +53,10 @@ const ulStyle = {
   return (
     <div className="stats">
      <h1 className='secular-font' >Your Stats!</h1>
-     <p className='exo-font' style={{fontSize: '1.7rem'}}>You've been here for {getElaspedTime()}</p>
-     <p className='exo-font' style={{fontSize: '1.7rem'}}>Red Box Clicker Score: {siteData.site.gameCount}</p>
-     <div> 
+     <p className='exo-font' style={{fontSize: '1.7vw'}}>You've been here for {getElaspedTime()}</p>
+     <p className='exo-font' style={{fontSize: '1.vw'}}>Red Box Clicker Score: {siteData.site.gameCount}</p>
+     {!siteData.site.sentEmail ? <p className='exo-font' style={{fontSize: '1.7rem'}}> You didn't send me an email. 😑</p> : <p className='exo-font' style={{fontSize: '2vw'}}> You sent me an email!</p>}
+     <div style={{margin: '3vh'}}> 
     <h2 className='secular-font' style={{fontSize: '2.3rem',}}>Certifications verified and time viewed: {certStuff.amountVerified}</h2>
     <ul className='exo-font' style={{ulStyle}}>
         {Object.keys(certStuff).map((data,i) => {
@@ -63,7 +64,7 @@ const ulStyle = {
         })}
     </ul>
      </div>
-     <div>
+     <div style={{margin: '3vh'}}>
      <h2 className='secular-font' style={{fontSize: '2.3rem',}}>Projects you viewed:</h2>
     <ul className='exo-font' style={{ulStyle}}>
         {Object.entries(projectStuff).map((data,i) => {
@@ -71,7 +72,7 @@ const ulStyle = {
         })}
     </ul>
      </div>
-     <div>
+     <div style={{margin: '3vh'}}>
      <h2 className='secular-font' style={{fontSize: '2.3rem',}}>Technologies you've clicked: {techStuff.clickedAmount}</h2>
     <ul className='exo-font' style={{ulStyle}}>
         {Object.keys(techStuff).map((data,i) => {

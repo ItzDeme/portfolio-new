@@ -79,7 +79,8 @@ const [siteData, setSiteData] = useState(
         14:[],
         clickedAmount: 0
         },
-      gameCount: 0
+      gameCount: 0,
+      sentEmail: false
 
     }
   }
@@ -93,7 +94,7 @@ const [showStats, setShowStats] = useState(false);
       <About setSiteData={setSiteData} siteData={siteData}/>
       <Projects setSiteData={setSiteData} siteData={siteData}/>
       <Tech  setSiteData={setSiteData} siteData={siteData}/>
-      <Contact setShowStats={setShowStats} />
+      <Contact setShowStats={setShowStats} siteData={siteData}/>
     </div>
   );
 }
