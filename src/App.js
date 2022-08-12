@@ -25,14 +25,43 @@ const [siteData, setSiteData] = useState(
         4:[],
         amountVerified: 0
       },
-      projects:{
-        timeOpened: '',
-        1:[],
-        2:[],
-        3:[],
-        4:[],
-        5:[]
-      },
+      projects:[
+        {
+          name:"Flyball",
+          timeOpened: '' ,
+          viewDemo: false,
+          viewCode: false,
+          timeClosed: ''
+        },
+        {
+          name:"Summer Storage",
+          timeOpened: '' ,
+          viewDemo: false,
+          viewCode: false,
+          timeClosed: ''
+        },
+        {
+          name:"Nihon-OH!",
+          timeOpened: '' ,
+          viewDemo: false,
+          viewCode: false,
+          timeClosed: ''
+        },
+        {
+          name:"BoosterPanel",
+          timeOpened: '' ,
+          viewDemo: false,
+          viewCode: false,
+          timeClosed: ''
+        },
+        {
+          name:"Innovative Energy Network",
+          timeOpened: '' ,
+          viewDemo: false,
+          viewCode: false,
+          timeClosed: ''
+        },
+      ],
       technologies:{
         1:[],
         2:[],
@@ -49,22 +78,22 @@ const [siteData, setSiteData] = useState(
         13:[],
         14:[],
         clickedAmount: 0
-        }
+        },
+      gameCount: 0
 
     }
   }
 );
+const [showStats, setShowStats] = useState(false);
 
-console.log(siteData);
 
   return (
     <div className="App">
-      <button onClick={()=> console.log(siteData)}>Click me.</button>
-      <Landing />
+      <Landing setSiteData={setSiteData} showStats={showStats} siteData={siteData}/>
       <About setSiteData={setSiteData} siteData={siteData}/>
-      <Projects />
+      <Projects setSiteData={setSiteData} siteData={siteData}/>
       <Tech  setSiteData={setSiteData} siteData={siteData}/>
-      <Contact />
+      <Contact setShowStats={setShowStats} />
     </div>
   );
 }

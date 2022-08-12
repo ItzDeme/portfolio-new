@@ -1,0 +1,9 @@
+.game{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 3px;
+    background-color: red;
+
+}
+

@@ -46,7 +46,6 @@ const handleTechClick = (info, e, i) =>{
     if(siteData.site.technologies[info.id].length == 0){
     siteData.site.technologies[info.id].push(true, new Date().toLocaleTimeString(), info.name)
     siteData.site.technologies.clickedAmount++;
-    console.log(siteData)
     }
     
     

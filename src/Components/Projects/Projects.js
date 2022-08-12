@@ -9,7 +9,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import projects from './ProjectData.json';
 import ProjectModal from './ProjectModal';
 
-function Projects() {
+function Projects({siteData, setSiteData}) {
 
 const [projectData, setProjectData] = useState(projects);
 const [modalShow, setModalShow] = useState(false);
@@ -36,12 +36,43 @@ const [singleProject, setSingleProject] = useState()
 
   const openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer');
+
   };
 
 function handleModalToggle (project) {
 setSingleProject(project);
 setModalShow(true);
 }
+const handleProjectClick = (info, e, i) =>{
+   
+  if(info != undefined){
+    
+    let array = siteData.site.projects
+    let number = array.find(project => project.name === info.name);
+
+    if(number.timeClosed === ''){
+  
+      number.timeOpened = new Date().toLocaleTimeString();
+      
+    }
+
+    }
+    
+    
+  }
+  
+const handleModalCLose = (info) =>{
+
+  let array = siteData.site.projects
+  let number = array.find(project => project.name === info.name);
+
+  if(number.timeClosed === ''){
+  
+    number.timeClosed = new Date().toLocaleTimeString();
+  }
+
+}
+
 
 
   return (
@@ -57,13 +88,13 @@ setModalShow(true);
      itemClass="carousel-item-padding-40-px"
     >
       {projectData.map((project, i) => {
-        return <Card className='cursor project-card' style={{ width: '18rem', height: '250px' , boxShadow: "-12px 14px #9d2626" }} key={i} onClick={()=>handleModalToggle(project)}>
+        return <Card className='cursor project-card' style={{ width: '18rem', height: '250px' , boxShadow: "-12px 14px #9d2626" }} key={i} onClick={(event)=>(handleModalToggle(project), handleProjectClick(project, event, i))}>
                   <Card.Img variant="top" src={project.image} style={{height: '100%'}}/>
                 </Card>
               
       })}
     </Carousel>;
-   {singleProject != null ? <ProjectModal onHide={() => setModalShow(false)} show={modalShow} project={singleProject}/> : null}
+   {singleProject != null ? <ProjectModal sitedata={siteData}  onHide={() => (setModalShow(false), handleModalCLose(singleProject) )} show={modalShow} project={singleProject}/> : null}
    <div><p className='exo-font' style={{fontSize: '20px', color: '#f1f1f1'}}>(Click one to learn more!)</p></div>
     </div>
   );

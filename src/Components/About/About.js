@@ -64,7 +64,6 @@ if(e.target.innerText === 'Verify'){
 if(siteData.site.certifications[cert.id].length == 0){
 siteData.site.certifications[cert.id].push(true, new Date().toLocaleTimeString(), cert.name)
 siteData.site.certifications.amountVerified++;
-console.log(siteData)
 }
 }
 }
@@ -72,8 +71,6 @@ console.log(siteData)
 }
 
 
-
-// openInNewTab(cert.verify))
 
   return (
    
@@ -131,21 +128,3 @@ console.log(siteData)
 }
 
 export default About;
-
-
-
-{/* <Carousel variant='dark'>
-      {data.map((cert, i) => {
-        return <Carousel.Item interval={10000}>
-        <img
-          className="d-block w-25 m-auto"
-          src={cert.image}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h1>{cert.name}</h1>
-          <h3><a href={cert.verify} target="_blank">Verify</a></h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      })}
-    </Carousel> */}

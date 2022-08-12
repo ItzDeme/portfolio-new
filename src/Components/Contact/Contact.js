@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-function Contact() {
+function Contact({setShowStats}) {
 const [email, setEmail] = useState('');
 const [message, setMessage] = useState('');
 
@@ -47,7 +47,7 @@ setMessage('');
     <Col style={{  display: 'block',
     marginTop: '2rem'}}>
       <div>
-      <Button variant="light" size="lg">Click here to see your stats!</Button>
+      <Button href='#landing' variant="light" size="lg" onClick={()=> setShowStats(true)}>Click here to see your stats!</Button>
       </div>
       <div style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-evenly'}}>
         <h1 style={{fontSize: '50px', margin: '2rem 100px'}}>
