@@ -53,9 +53,9 @@ const ulStyle = {
   return (
     <div className="stats">
      <h1 className='secular-font' >Your Stats!</h1>
-     <p className='exo-font' style={{fontSize: '1.7vw'}}>You've been here for {getElaspedTime()}</p>
-     <p className='exo-font' style={{fontSize: '1.vw'}}>Red Box Clicker Score: {siteData.site.gameCount}</p>
-     {!siteData.site.sentEmail ? <p className='exo-font' style={{fontSize: '1.7rem'}}> You didn't send me an email. 😑</p> : <p className='exo-font' style={{fontSize: '2vw'}}> You sent me an email!</p>}
+     <p className='exo-font' style={{fontSize: '1.7rem'}}>You've been here for {getElaspedTime()}</p>
+     <p className='exo-font' style={{fontSize: '1.7rem'}}>Red Box Clicker Score: {siteData.site.gameCount}</p>
+     {!siteData.site.sentEmail ? <p className='exo-font' style={{fontSize: '1.7rem'}}> You didn't send me an email. 😑</p> : <p className='exo-font' style={{fontSize: '1.7rem'}}> You sent me an email!</p>}
      <div style={{margin: '3vh'}}> 
     <h2 className='secular-font' style={{fontSize: '2.3rem',}}>Certifications verified and time viewed: {certStuff.amountVerified}</h2>
     <ul className='exo-font' style={{ulStyle}}>
