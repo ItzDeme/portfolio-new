@@ -1,3 +1,29 @@
 .stats{
     color: rgb(226, 220, 200);
 }
+
+.fluid-font{
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    margin: 5px;
+}
+
+.fluid-font-title{
+    font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+
+
+@media only screen and (min-width: 1500px) {
+    .fluid-font {
+      font-size: 22px;
+    }
+  }
+
+  @media only screen and (max-height: 900px) {
+    .fluid-font {
+      font-size: 12px;
+    }
+    .fluid-font-title{
+        font-size: 16px;
+    }
+  }

@@ -34,6 +34,9 @@
 }
 
 
+
+
+
 @media only screen and (min-width: 1500px) {
     .tech-display {
       font-size: 1.5rem;
@@ -42,4 +45,23 @@
     .tech-display div{
         width: 200px !important;
       }
+  }
+
+  @media only screen and (max-width: 454px) {
+    .tech-option{
+        width: 132px !important;
+    }
+    .tech-option p{
+        font-size: 13px !important;
+    }
+  }
+
+  @media only screen and (max-width: 409px) {
+    .tech-option{
+        width: 120px !important;
+        margin: .5em !important;
+    }
+    .tech-option p{
+        font-size: 13px !important;
+    }
   }

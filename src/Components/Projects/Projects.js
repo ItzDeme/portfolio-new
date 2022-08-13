@@ -2,20 +2,16 @@ import './Projects.css';
 import React, {useState} from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Form } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import projects from './ProjectData.json';
 import ProjectModal from './ProjectModal';
 
-function Projects({siteData, setSiteData}) {
+function Projects({siteData}) {
 
 const [projectData, setProjectData] = useState(projects);
 const [modalShow, setModalShow] = useState(false);
 const [singleProject, setSingleProject] = useState()
 
-  let projectInfo = {};
   const responsive = {
     desktop: {
       breakpoint: { max: 3200, min: 1024 },
@@ -34,10 +30,6 @@ const [singleProject, setSingleProject] = useState()
     }
   };
 
-  const openInNewTab = url => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-
-  };
 
 function handleModalToggle (project) {
 setSingleProject(project);
@@ -45,7 +37,7 @@ setModalShow(true);
 }
 const handleProjectClick = (info, e, i) =>{
    
-  if(info != undefined){
+  if(info !== undefined){
     
     let array = siteData.site.projects
     let number = array.find(project => project.name === info.name);

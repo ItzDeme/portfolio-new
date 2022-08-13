@@ -10,6 +10,19 @@
     position: relative;
 }
 
+
+.landing-stats{
+    height: 125vh;
+    background-color: #0F3D3E;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+    box-shadow: 0px 10px 20px 0px #323232;
+    position: relative;
+}
+
 .landing-flex{
     align-items: center;
     display: flex;
@@ -17,12 +30,23 @@
     justify-content: center;
 }
 
-.landing-flex h1{
+.landing div h1{
     margin: 0;
+    margin-top: 2vh;
+    font-size: calc(32px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));;
+}
+
+.landing-stats div h1{
+    margin: 0;
+    margin-top: 2vh;
+    font-size: calc(28px + (26 - 14) * ((100vh - 300px) / (1600 - 300)));;
 }
 
 
 .landing div div p{
+
+    font-size: calc(18px + (26 - 14) * ((100vh - 300px) / (1600 - 300)));
+
     background-color: #CA4246;
   
     /* Create the gradient. */
@@ -54,3 +78,49 @@
   
   
 }
+
+.landing-stats div div p{
+
+    font-size: calc(18px + (26 - 14) * ((100vh - 300px) / (1600 - 300)));
+
+    background-color: #CA4246;
+  
+    /* Create the gradient. */
+     background-image: linear-gradient(
+          90deg,
+          #CA4246 16.666%, 
+          #E16541 16.666%, 
+          #E16541 33.333%, 
+          #F18F43 33.333%, 
+          #F18F43 50%, 
+          #8B9862 50%, 
+          #8B9862 66.666%, 
+          #476098 66.666%, 
+          #476098 83.333%, 
+          #A7489B 83.333%);
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+  
+  
+}
+
+@media only screen and (max-height: 750px) {
+    .landing div div p{
+        font-size: calc(16px + (26 - 14) * ((100vh - 300px) / (1600 - 300)));
+    }
+    .landing-flex h1{
+        font-size: calc(20px + (26 - 14) * ((100vh - 300px) / (1600 - 300)));
+    }
+  }
+  

@@ -2,7 +2,7 @@ import './Tech.css';
 import React, {useState} from 'react';
 import { Technologies } from './Techologies';
 
-function Tech({siteData, setSiteData}) {
+function Tech({siteData}) {
 const [techInfo, setTechInfo] = useState("Below is a list techologies that I work with daily and some that I've used in the past that I can easily begin using again. Feel free to click the below technologies to learn more about how I use them.");
 const [techID, setTechID] = useState(null);
 
@@ -28,7 +28,6 @@ const techStyleSelected = {
   backgroundColor: '#E4DCCF',
   borderRadius: '5px',
   padding: '0.5em',
-  boxShadow: '2px 2px #100F0F',
   cursor: 'pointer',
   MozBoxShadow:    'inset 0 0 10px #000000',
   WebkitBoxShadow: 'inset 0 0 10px #000000',
@@ -63,7 +62,7 @@ const handleTechClick = (info, e, i) =>{
       </div>
       <div className='tech-display'>
         {Technologies.map((tech, i) => {
-          return <div key={i} style={i == techID ? techStyleSelected : techStyle} onClick={(event)=>{handleTechClick(tech, event, i)}}>
+          return <div className='tech-option' key={i} style={i == techID ? techStyleSelected : techStyle} onClick={(event)=>{handleTechClick(tech, event, i)}}>
             <img alt={tech.name} src={tech.link} style={{width: '30px', height: '30px'}} />
             <p>{tech.name}</p>
           </div>

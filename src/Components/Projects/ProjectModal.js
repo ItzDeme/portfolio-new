@@ -40,8 +40,8 @@ function ProjectModal(props) {
       <Modal.Body>
         <img alt={props.project.name} src={props.project.image} style={{width: "100%"}}/>
         <div className="flex-space">
-       { props.project.githubLocation != "Private" ? <a href={props.project.githubLocation} onClick={(e)=> handleLinkClick(props.project, e)} target="_blank"><h4><FontAwesomeIcon icon={faCode} /> View Code</h4></a> : <h4>Private Code</h4>}
-       {props.project.description2 != "No website" ? <a href={props.project.description2} onClick={(e)=> handleLinkClick(props.project, e)} target="_blank"><h4>View Demo <FontAwesomeIcon icon={faLaptopCode} /></h4></a> : <h4>No Website</h4> }
+       { props.project.githubLocation !== "Private" ? <a href={props.project.githubLocation} onClick={(e)=> handleLinkClick(props.project, e)} target="_blank" rel="noreferrer"><h4><FontAwesomeIcon icon={faCode} /> View Code</h4></a> : <h4>Private Code</h4>}
+       {props.project.description2 !== "No website" ? <a href={props.project.description2} onClick={(e)=> handleLinkClick(props.project, e)} target="_blank" rel="noreferrer"><h4>View Demo <FontAwesomeIcon icon={faLaptopCode} /></h4></a> : <h4>No Website</h4> }
         </div>
         <p>
           {props.project.description}

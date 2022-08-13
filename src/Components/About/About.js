@@ -1,6 +1,6 @@
 import './About.css';
 import React, {useState} from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import { Doughnut } from 'react-chartjs-2';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -10,7 +10,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import { ChartData } from './ChartData';
 import skillsImage from '../Images/skills.png'
 
-function About({setSiteData, siteData}) {
+function About({siteData}) {
   const [certifs, setCertifs] = useState(Certs);
   const [graphData, setGraphData] = useState ({
     labels: ChartData.map((data) => data.label),
@@ -59,9 +59,9 @@ timesClicked++;
 }
 
 }
-if(cert != undefined){
+if(cert !== undefined){
 if(e.target.innerText === 'Verify'){
-if(siteData.site.certifications[cert.id].length == 0){
+if(siteData.site.certifications[cert.id].length === 0){
 siteData.site.certifications[cert.id].push(true, new Date().toLocaleTimeString(), cert.name)
 siteData.site.certifications.amountVerified++;
 }

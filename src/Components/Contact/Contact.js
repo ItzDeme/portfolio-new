@@ -1,13 +1,13 @@
 import './Contact.css';
 import Form from 'react-bootstrap/Form';
 import React, {useState} from 'react';
-import InputGroup from 'react-bootstrap/InputGroup';
-import {Container, Row, Col} from 'react-bootstrap';
+
+import {Row, Col} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-function Contact({setShowStats, siteData}) {
+function Contact({setShowStats, siteData, handleDBPush}) {
 const [email, setEmail] = useState('');
 const [message, setMessage] = useState('');
 
@@ -21,12 +21,15 @@ const handleSumbit = (data) =>{
 setEmail('');
 setMessage('');
 
-if(siteData.site.sentEmail == false){
+if(siteData.site.sentEmail === false){
 siteData.site.sentEmail = true;
 }
 }
 
-
+const handleStatCreation = async (e) =>{
+  setShowStats(true);
+  handleDBPush()
+ }
 
   return (
     <div className="contact">
@@ -53,14 +56,14 @@ siteData.site.sentEmail = true;
     <Col style={{  display: 'block',
     marginTop: '2rem'}}>
       <div>
-      <Button href='#landing' variant="light" style={{fontSize: '32px'}} size="lg" onClick={()=> setShowStats(true)}>Click here to see your stats!</Button>
+      <Button href='#landing' variant="light" style={{fontSize: '32px'}} size="lg" onClick={()=> handleStatCreation()}>Click here to see your stats!</Button>
       </div>
       <div style={{display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-evenly'}}>
         <h1 style={{fontSize: '50px', margin: '2rem 100px'}}>
-        <a href="https://github.com/ItzDeme" target='_blank'><FontAwesomeIcon icon={faGithub} /></a>
+        <a href="https://github.com/ItzDeme" target='_blank' rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
         </h1>
         <h1 style={{fontSize: '50px',  margin: '2rem 100px'}}>
-        <a href="https://www.linkedin.com/in/demetrius-b-7775331a9/" target='_blank'><FontAwesomeIcon icon={faLinkedinIn} /></a>
+        <a href="https://www.linkedin.com/in/demetrius-b-7775331a9/" target='_blank' rel="noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
         </h1>
       </div>
       </Col>

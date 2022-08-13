@@ -7,3 +7,10 @@
 
 }
 
+@media only screen and (max-width: 500px) {
+    .game{
+        height: 25px;
+        width: 25px;
+        border-radius: 5px;
+    }
+  }

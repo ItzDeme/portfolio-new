@@ -10,13 +10,13 @@ function Landing({siteData, setSiteData, showStats}) {
   }
 
   const pStyle = {
-    fontSize: '2rem',
+    //fontSize: '2rem',
     fontWeight: '600',
   }
 
 
   return (
-    <div className="landing" id='landing'>
+    <div className={!showStats ? 'landing' : 'landing-stats'} id='landing'>
       
       <div className="landing-flex">
         <div className='landing-text'>
