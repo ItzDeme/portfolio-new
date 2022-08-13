@@ -85,7 +85,7 @@ const handleModalCLose = (info) =>{
                 </Card>
               
       })}
-    </Carousel>;
+    </Carousel>
    {singleProject != null ? <ProjectModal sitedata={siteData}  onHide={() => (setModalShow(false), handleModalCLose(singleProject) )} show={modalShow} project={singleProject}/> : null}
    <div><p className='exo-font' style={{fontSize: '20px', color: '#f1f1f1'}}>(Click one to learn more!)</p></div>
     </div>

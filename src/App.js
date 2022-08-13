@@ -5,7 +5,7 @@ import About from './Components/About/About';
 import Projects from './Components/Projects/Projects';
 import Tech from './Components/Tech/Tech';
 import Contact from './Components/Contact/Contact';
-
+import {v4 as uuidv4} from 'uuid';
 import SheetDB from 'sheetdb-js'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -85,7 +85,7 @@ const [siteData, setSiteData] = useState(
         },
       gameCount: 0,
       sentEmail: false,
-      id: window.navigation.currentEntry.id
+      id: uuidv4()
 
     }
   }
