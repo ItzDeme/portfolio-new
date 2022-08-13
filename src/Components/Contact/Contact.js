@@ -1,7 +1,7 @@
 import './Contact.css';
 import Form from 'react-bootstrap/Form';
 import React, {useState} from 'react';
-
+import ReCAPTCHA from "react-google-recaptcha";
 import {Row, Col} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,7 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 function Contact({setShowStats, siteData, handleDBPush}) {
 const [email, setEmail] = useState('');
 const [message, setMessage] = useState('');
-
+const [notBot, setNotBot] = useState(false);
 const handleInput = async (e) =>{
  e.target.name === 'email' ? setEmail(e.target.value) : setMessage(e.target.value);
 }
@@ -47,10 +47,7 @@ const handleStatCreation = async (e) =>{
       <Form.Group className="mb-6" controlId="exampleForm.ControlTextarea1" >
         <Form.Label>Message</Form.Label>
         <Form.Control value={message} as="textarea" name='message'  rows={3} onChange={(e)=> handleInput(e)}/>
-        <Button variant="primary" type="submit" style={{maxWidth: '400px' , margin: '10px'}} >
-        Submit
-      </Button>
-      </Form.Group>
+{!notBot ?  <ReCAPTCHA size='compact' sitekey={process.env.REACT_APP_CAPTCHA_KEY} onChange={()=>setNotBot(true)} /> : <Button variant="primary" type="submit" style={{maxWidth: '400px' , margin: '10px'}} >Submit</Button>}      </Form.Group>
     </Form>
     </Col>
     <Col style={{  display: 'block',
