@@ -125,7 +125,7 @@ const analytics = getAnalytics(app);
   
   
     SheetDB.write(process.env.REACT_APP_SHEET_DB_URL, sentData).then(function(result){
-    console.log(result);
+    
   }, function(error){
     console.log(error);
   });
